@@ -32,7 +32,11 @@ public class CarController {
 
     @PostMapping("/cars")
     public ApiResponse insertCar(@RequestBody CarRequest carRequest){
-        carService.insertCar(carRequest);
-        return ApiResponse.success(null);
+        int i = carService.insertCar(carRequest);
+        if( i != 1) {
+            return ApiResponse.fail("数据插入失败");
+        } else {
+            return ApiResponse.success(null);
+        }
     }
 }
