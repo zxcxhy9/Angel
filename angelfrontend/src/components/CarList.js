@@ -23,7 +23,8 @@ class CarList extends React.Component{
         //使用axios与服务器通讯
         axios.get('/cars')
           .then(response => {
-            this.setState({cars: response.data});
+              console.log(response.data);
+            this.setState({cars: response.data.data});
         })
         .catch(function (error) {
             console.log(error);
@@ -51,7 +52,6 @@ class CarList extends React.Component{
         axios.post(`/cars`, car).then(({data})=>{
             this.query();
         }).catch(error=>{
-            this.myalert();
             console.log(error);
         })
     }
