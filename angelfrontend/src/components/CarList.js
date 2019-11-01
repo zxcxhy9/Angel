@@ -49,7 +49,8 @@ class CarList extends React.Component{
             name: this.state.name
         };
 
-        axios.post(`/cars`, car).then(({data})=>{
+        axios.post(`/cars`, car).then(response=>{
+            console.log(response.data);
             this.query();
         }).catch(error=>{
             console.log(error);

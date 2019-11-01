@@ -28,10 +28,10 @@ public class CarService {
         carMapper.deleteById(id);
     }
 
-    public void insertCar(CarRequest carRequest) {
+    public int insertCar(CarRequest carRequest) {
         Car car = new Car();
         car.setId(carRequest.getId());
         car.setName(carRequest.getName());
-        carMapper.insertCar(car);
+        return carMapper.insertCar(car);
     }
 }

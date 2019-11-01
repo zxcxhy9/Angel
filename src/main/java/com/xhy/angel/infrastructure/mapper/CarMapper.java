@@ -15,5 +15,5 @@ public interface CarMapper {
 
     void deleteById(Long id);
 
-    void insertCar(Car car);
+    int insertCar(Car car);
 }
