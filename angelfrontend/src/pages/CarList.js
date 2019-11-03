@@ -104,31 +104,25 @@ class CarList extends React.Component{
                             <div className="panel-body">
                                 <form className="form-horizontal">
                                     <div className="form-group">
+
                                         <label htmlFor="id" className="col-xs-3">id</label>
-                                        <div className="col-xs-8">
-                                            <input type="text" id="id" className="form-control" value={this.state.id} onChange={
+                                        <input type="text" id="id" className="form-control" value={this.state.id} onChange={
                                                 (e)=>{
                                                     this.setState({
                                                         id:e.target.value
                                                     })
                                                 }
                                             }/>
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="name" className="col-xs-3">name</label>
-                                            <input type="text" id="name" className="form-control" value={this.state.name} onChange={
+
+                                        <label htmlFor="name" className="col-xs-3">name</label>
+                                        <input type="text" id="name" className="form-control" value={this.state.name} onChange={
                                                 (e)=>{
                                                     this.setState({
                                                         name:e.target.value
                                                     })
                                                 }
                                             }/>
-                                        </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <div className="col-sm-offset-2 col-sm-10">
                                             <button className="btn btn-primary" onClick={this.addCar}>新增</button>
-                                        </div>
                                     </div>
                                 </form>
                             </div>
