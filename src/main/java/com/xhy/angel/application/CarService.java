@@ -11,23 +11,21 @@ import java.util.List;
 
 @Service
 public class CarService {
-    private final CarMapper carMapper;
 
     @Autowired
-    public CarService(CarMapper carMapper) {
-        this.carMapper = carMapper;
-    }
+    CarMapper carMapper;
 
     @Transactional(readOnly = true)
     public List<Car> getCars() {
         return carMapper.selectAll();
     }
 
-    //@Transactional()
+    @Transactional
     public void deleteCar(Long id) {
         carMapper.deleteById(id);
     }
 
+    @Transactional
     public int insertCar(CarRequest carRequest) {
         Car car = new Car();
         car.setId(carRequest.getId());
