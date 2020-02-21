@@ -19,7 +19,7 @@
                         "pid": "${PID:-}",
                         "thread": "%thread",
                         "class": "%logger{40}",
-                        "rest": "%logstashKafkaMessage"
+                        "rest": "%message"
                         }
                     </pattern>
                 </pattern>

@@ -3,10 +3,8 @@ package com.xhy.angel;
 import com.xhy.angel.common.spark.SparkJob;
 import com.xhy.angel.common.utils.SpringBootBeanUtils;
 import com.xhy.angel.config.SparkConfig;
-import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.spark.SparkConf;
-import org.apache.spark.SparkJobInfo;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.util.Utils;
 import org.mybatis.spring.annotation.MapperScan;
@@ -26,17 +24,19 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan(basePackages = "com.xhy.angel.infrastructure.mapper", annotationClass = Mapper.class)
 @ComponentScan(basePackages = "com.xhy.angel.*")
 @EnableSwagger2
-@EnableAdminServer
 @EnableAsync
-public class AngelApplication implements CommandLineRunner {
+public class AngelApplication
+//        implements CommandLineRunner
+{
 
-    @Autowired
-    SparkConfig sparkConfig;
+    //@Autowired
+    //SparkConfig sparkConfig;
 
     public static void main(String[] args) {
         SpringApplication.run(AngelApplication.class, args);
     }
 
+    /**
     @Override
     public void run(String... args) throws Exception {
         SparkConf sparkConf = new SparkConf()
@@ -53,4 +53,5 @@ public class AngelApplication implements CommandLineRunner {
             ((SparkJob) sparkJob).execute(javaSparkContext);
         }
     }
+    */
 }
