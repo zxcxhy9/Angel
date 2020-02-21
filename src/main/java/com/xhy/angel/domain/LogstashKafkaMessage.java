@@ -1,11 +1,11 @@
-package com.xhy.angel.task;
+package com.xhy.angel.domain;
 
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class Message {
+public class LogstashKafkaMessage {
 
     public int id;
 

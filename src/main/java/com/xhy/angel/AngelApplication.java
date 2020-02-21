@@ -3,6 +3,7 @@ package com.xhy.angel;
 import com.xhy.angel.common.spark.SparkJob;
 import com.xhy.angel.common.utils.SpringBootBeanUtils;
 import com.xhy.angel.config.SparkConfig;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkJobInfo;
@@ -14,9 +15,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -26,6 +26,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan(basePackages = "com.xhy.angel.infrastructure.mapper", annotationClass = Mapper.class)
 @ComponentScan(basePackages = "com.xhy.angel.*")
 @EnableSwagger2
+@EnableAdminServer
+@EnableAsync
 public class AngelApplication implements CommandLineRunner {
 
     @Autowired

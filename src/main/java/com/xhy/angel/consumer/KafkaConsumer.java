@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 public class KafkaConsumer {
     private static Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
 
-    @KafkaListener(topics = {"test"})
-    public void listen(ConsumerRecord<?, ?> record) {
-        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
-        if (kafkaMessage.isPresent()) {
-            Object message = kafkaMessage.get();
-            logger.info("----------------- record =" + record);
-            logger.info("------------------ message =" + message);
-        }
-    }
+    //@KafkaListener(topics = {"test"})
+    //public void listen(ConsumerRecord<?, ?> record) {
+      //  Optional<?> kafkaMessage = Optional.ofNullable(record.value());
+        //if (kafkaMessage.isPresent()) {
+          //  Object message = kafkaMessage.get();
+            //logger.info("----------------- record =" + record);
+            //logger.info("------------------ message =" + message);
+        //}
+    //}
 }
